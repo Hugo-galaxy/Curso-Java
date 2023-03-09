@@ -11,34 +11,16 @@ public class exercicio17 {
         double lado3= scan.nextDouble();
 
 
-        if (lado1+lado2>lado3){
-            System.out.println("é um triangulo");
+        if (lado1+lado2>lado3 || lado2+lado3>lado1 || lado1+lado3>lado2){
             if (lado1==lado2 && lado2==lado3 && lado1==lado3){
                 System.out.println("é um triangulo equilatero");
             } else if (lado1==lado2 || lado2==lado3 || lado1==lado3){
                 System.out.println("é um triangulo isósceles");
-            }else {
+            }else if (lado1!=lado2 && lado2!=lado3 && lado1!=lado3) {
                 System.out.println("é um triangulo escaleno");
             }
-        } else if (lado2+lado3>lado1){
-            System.out.println("é triangulo");
-            if (lado1==lado2 && lado2==lado3 && lado1==lado3){
-                System.out.println("é um triangulo equilatero");
-            } else if (lado1==lado2 || lado2==lado3 || lado1==lado3){
-                System.out.println("é um triangulo isósceles");
-            }else {
-                System.out.println("é um triangulo escaleno");
-            }
-        } else if (lado1+lado3>lado2){
-            System.out.println("é triangulo");
-            if (lado1==lado2 && lado2==lado3 && lado1==lado3){
-                System.out.println("é um triangulo equilatero");
-            } else if (lado1==lado2 || lado2==lado3 || lado1==lado3){
-                System.out.println("é um triangulo isósceles");
-            }else {
-                System.out.println("é um triangulo escaleno");
-            }
-        }else {
+        }
+        else {
             System.out.println("não é um triangulo");
         }
     }
