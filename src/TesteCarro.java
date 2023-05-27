@@ -9,5 +9,15 @@ public class TesteCarro {
 
         System.out.println(van.marca);
         System.out.println(van.modelo);
+
+        van.exibirAutonomia();
+
+        double autonomia= van.obterAutonomia();
+        System.out.println("A autonomia do carro é: "+autonomia);
+
+        double qtdCombustivel = van.calcularCombustivel(10);
+
+        System.out.println("quantidade de combustivel: "+qtdCombustivel);
     }
+
 }
