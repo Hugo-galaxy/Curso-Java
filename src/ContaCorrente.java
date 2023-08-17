@@ -1,42 +1,95 @@
-import java.util.Scanner;
-
 public class ContaCorrente {
-    Scanner scan = new Scanner(System.in);
-    String numeroConta;
-    String numeroAgencia;
-    double saldo;
-    boolean especial;
-    double limiteEspecial;
+    private String numeroConta;
+    private String agencia;
+    private boolean especial;
+    private double limiteEspecial;
+    private double saldoDaConta;
+    public ContaCorrente() {
 
+    }
 
-    boolean realizarSaque(double quantiaASacar){
-        if (saldo>=quantiaASacar){ //tem saldo na conta
-            saldo=saldo-quantiaASacar;
+    public ContaCorrente(String numeroConta,String agencia, boolean especial, double limiteEspecial, double saldoDaConta){
+        this.numeroConta=numeroConta;
+        this.agencia=agencia;
+        this.especial=especial;
+        this.limiteEspecial=limiteEspecial;
+        this.saldoDaConta=saldoDaConta;
+    }
+
+    public String getNumeroConta(){
+        return numeroConta;
+    }
+    public void setNumeroConta(String numero){
+        this.numeroConta=numeroConta;
+    }
+
+    public String getAgencia(){
+        return agencia;
+    }
+    public void setAgencia(String numeroAgencia){
+        this.agencia=agencia;
+    }
+
+    public boolean isEspecial(){
+        return especial;
+    }
+    public void setEspecial(boolean contaEspecial){
+        this.especial=especial;
+    }
+
+    public double getLimiteEspecial(){
+        return limiteEspecial;
+    }
+
+    public void setLimiteEspecial(double valorLimiteEspecial){
+        this.limiteEspecial=limiteEspecial;
+    }
+
+    public double getSaldoDaConta(){
+
+        return saldoDaConta;
+    }
+
+    public void setSaldoDaConta(double valorSaldoDaConta){
+
+        this.saldoDaConta=saldoDaConta;
+    }
+
+    public boolean realizarSaque (double quantiaASacar){
+        if (saldoDaConta>=quantiaASacar){  //tem saldo na conta
+            saldoDaConta=saldoDaConta-quantiaASacar;
             return true;
-        }else { //não tem saldo na conta
-            if (especial){
-                double limite = limiteEspecial+saldo;
-                if (limite>=quantiaASacar){ //verificar se tem saldo no limite especial
-                    saldo=saldo-quantiaASacar;
+        } else{ //nao tem saldo na conta
+            if (especial){ //verifica se o limite especial tem saldo
+                double limite=limiteEspecial+saldoDaConta;
+                if (limite>=quantiaASacar){
+                    saldoDaConta-=quantiaASacar;
                     return true;
-                }else {
-                    return false;
+                } else {
+                    return false; //nao tem saldo no limite especial
                 }
-            }else {
-                return false; //não é especial e não tem saldo suficiente
+            } else {
+                return false;  //nao é especial e nao tem saldo suficiente
             }
         }
-
-    }
-    void depositar (double valorDepositado) {
-        saldo=saldo+valorDepositado;
-
     }
 
-    void consultarSaldo(){
-        System.out.println("Saldo da conta: "+saldo);
+    public void depositar(double valorDepositado){
+
+        saldoDaConta+=valorDepositado;
     }
-    boolean verificarUsoChequeEspecial(){
-        return saldo<0;
+
+    public void consultarSaldo(){
+
+        System.out.println("saldo da conta é: "+saldoDaConta);
     }
+
+    public boolean verificarUsoChequeEspecial(){
+
+        return saldoDaConta<0;
+    }
+
+
+
 }
+
