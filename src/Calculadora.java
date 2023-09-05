@@ -26,7 +26,7 @@ public class Calculadora {
             total=total*i;
 
         }
-        System.out.println("fatorial: "+total);
+        System.out.println("fatorial não recursivo: "+total);
         return 0;
     }
 
@@ -37,6 +37,13 @@ public class Calculadora {
     public static double potencia(double num1,double num2){
         System.out.printf("potenciação: ");
         return Math.pow(num1,num2);
+    }
+
+    public static int fatorialRecursivo (int num){
+        if (num==0){
+            return 1;
+        }
+        return num*fatorialRecursivo(num-1);
     }
 
 

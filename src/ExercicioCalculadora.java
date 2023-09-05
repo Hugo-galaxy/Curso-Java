@@ -20,12 +20,12 @@ public class ExercicioCalculadora {
             }
         }while (fatorial<0);
 
-        Calculadora.fatorial(fatorial);
-
 
         imprimirValor(Calculadora.soma(num1,num2));
         imprimirValor(Calculadora.dividir(num1,num2));
         imprimirValor(Calculadora.subtrair(num1,num2));
         imprimirValor(Calculadora.potencia(num1,num2));
+        Calculadora.fatorial(fatorial); //fatorial não recursivo
+        System.out.println("Fatorial Recursivo:"+Calculadora.fatorialRecursivo(fatorial));//fatorial recursivo
     }
 }
