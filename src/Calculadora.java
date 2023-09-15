@@ -39,13 +39,26 @@ public class Calculadora {
         return Math.pow(num1,num2);
     }
 
-    public static int fatorialRecursivo (int num){
+    public static int fatorialRecursivo (int num){  //recursivo
         if (num==0){
             return 1;
         }
         return num*fatorialRecursivo(num-1);
     }
 
+    public static int fibonacci(int num){  //recursivo
+        if (num<2){
+            return 1;
+        }
+        return fibonacci(num-1)+fibonacci(num-2);
+    }
+
+    public static int somatorio(int num){  //recursivo
+        if (num==1){
+            return 1;
+        }
+        return num+somatorio(num-1);
+    }
 
 
 
